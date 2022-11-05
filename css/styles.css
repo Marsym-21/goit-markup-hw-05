@@ -773,25 +773,38 @@ text-align: center;
     transition-timing-function: var(--transition-timing-function);
 }
 
+.backdrop.is-hidden{
+    opacity: 0;
+    visibility:hidden;
+    pointer-events:none;
+   
+}
+
 
 .modal{
     position: absolute;
     top: 50%;
     left:50%;
 
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(1);
     min-width:528px ;
     min-height: 581px;
 
     background-color: var(--body-color);
     border-radius: 4px;
+
+    transition-property: transform;
+    transition-duration: 250ms;
+    transition-timing-function: var(--transition-timing-function);
 }
 
-.backdrop.is-hidden{
-    opacity: 1;
-    visibility:hidden;
-    pointer-events:none;
+
+
+.backdrop.is-hidden .modal{
+    transform: translate(-50%, -50%) scale(0.5);
+
 }
+
 
 .modal .btn{
     position: absolute;
